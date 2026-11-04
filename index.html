@@ -1,1 +1,143 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahtab Azhar | Software Engineer</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#080d19;--card:#111a2c;--text:#f5f7ff;--muted:#aab5ca;--accent:#48d7c5}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+header{position:sticky;top:0;background:#080d19ed;backdrop-filter:blur(12px);padding:16px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff12;z-index:10}
+.logo{font-size:22px;font-weight:bold;color:var(--accent)}
+nav{display:flex;gap:20px;align-items:center}
+nav a{color:var(--text);text-decoration:none;font-size:14px}
+nav a:hover{color:var(--accent)}
+button,.btn{border:0;background:var(--accent);color:#06131b;padding:10px 17px;border-radius:9px;font-weight:bold;cursor:pointer;text-decoration:none}
+section{padding:75px 8%;scroll-margin-top:75px}
+.hero{min-height:85vh;display:flex;align-items:center;justify-content:space-between;gap:35px}
+.hero h1{font-size:clamp(35px,6vw,65px);line-height:1.2;margin:15px 0}
+.hero h1 span{color:var(--accent)}
+.hero p,.muted{color:var(--muted)}
+.hero p{max-width:580px;margin-bottom:25px}
+.profile{width:260px;height:260px;border-radius:50%;object-fit:cover;border:5px solid var(--accent);box-shadow:0 0 55px #48d7c533}
+.tag{color:var(--accent);font-weight:bold;letter-spacing:2px}
+h2{font-size:32px;margin-bottom:12px}
+.subtitle{color:var(--muted);margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:var(--card);padding:23px;border:1px solid #ffffff12;border-radius:15px;transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:var(--accent)}
+.card h3{color:var(--accent);margin-bottom:9px}
+.skills{display:flex;flex-wrap:wrap;gap:12px}
+.skills span{background:var(--card);border:1px solid #ffffff20;padding:10px 17px;border-radius:9px}
+.contact a{color:var(--accent)}
+footer{text-align:center;padding:25px;border-top:1px solid #ffffff15;color:var(--muted)}
+#lang{margin-left:10px}
+@media(max-width:700px){
+ header{flex-wrap:wrap;gap:12px}
+ nav{width:100%;overflow-x:auto;padding-bottom:5px}
+ .hero{flex-direction:column-reverse;text-align:center;justify-content:center}
+ .profile{width:190px;height:190px}
+ section{padding:55px 6%}
+}
+body.rtl{direction:rtl;text-align:right}
+body.rtl nav{direction:rtl}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo">MahtabAzhar.</div>
+ <nav>
+  <a href="#home" data-en="Home" data-ps="کور">Home</a>
+  <a href="#about" data-en="About" data-ps="زما په اړه">About</a>
+  <a href="#skills" data-en="Skills" data-ps="مهارتونه">Skills</a>
+  <a href="#projects" data-en="Projects" data-ps="پروژې">Projects</a>
+  <a href="#services" data-en="Services" data-ps="خدمات">Services</a>
+  <a href="#contact" data-en="Contact" data-ps="اړیکه">Contact</a>
+  <button id="lang" onclick="toggleLang()">پښتو</button>
+ </nav>
+</header>
+
+<section class="hero" id="home">
+ <div>
+  <div class="tag" data-en="WELCOME TO MY PORTFOLIO" data-ps="زما شخصي ویب‌سایټ ته ښه راغلاست">WELCOME TO MY PORTFOLIO</div>
+  <h1 data-en="Hi, I'm <span>Mahtab Azhar</span>" data-ps="سلام، زه <span>مهتاب الله اظهار</span> یم">Hi, I'm <span>Mahtab Azhar</span></h1>
+  <h3 data-en="Software Engineer | Web & Mobile App Developer" data-ps="سافټویر انجینر | د ویب او موبایل اپلیکیشن جوړوونکی">Software Engineer | Web & Mobile App Developer</h3>
+  <p data-en="I build modern websites, mobile applications and database systems to help businesses grow through technology." data-ps="زه عصري ویب‌سایټونه، موبایل اپلیکیشنونه او ډیټابېس سیسټمونه جوړوم، ترڅو له سوداګریزو چارو سره د ټکنالوژۍ له لارې مرسته وکړم.">I build modern websites, mobile applications and database systems to help businesses grow through technology.</p>
+  <a class="btn" href="#contact" data-en="Contact Me" data-ps="اړیکه راسره ونیسئ">Contact Me</a>
+  <a class="btn" style="background:transparent;color:var(--accent);border:1px solid var(--accent);margin-left:8px" href="https://github.com/mahtabazhar" target="_blank">GitHub</a>
+ </div>
+ <img class="profile" src="profile.jpg" alt="Mahtab Azhar">
+</section>
+
+<section id="about">
+ <div class="tag">01 / ABOUT</div>
+ <h2 data-en="About Me" data-ps="زما په اړه">About Me</h2>
+ <p class="subtitle" data-en="Passionate about technology and creative solutions." data-ps="د ټکنالوژۍ او نوښتګرو حل‌لارو سره مینه لرم.">Passionate about technology and creative solutions.</p>
+ <div class="card">
+  <p data-en="I am Mahtab Azhar, a Software Engineer interested in web development, mobile application development and database management. My goal is to create useful, reliable and beautiful digital solutions." data-ps="زه مهتاب الله اظهار یم، یو سافټویر انجینر چې د ویب پراختیا، موبایل اپلیکیشنونو او ډیټابېس مدیریت سره مینه لرم. زما موخه د ګټورو، باوري او ښکلو ډیجیټلي حل‌لارو جوړول دي.">I am Mahtab Azhar, a Software Engineer interested in web development, mobile application development and database management. My goal is to create useful, reliable and beautiful digital solutions.</p>
+ </div>
+</section>
+
+<section id="skills">
+ <div class="tag">02 / SKILLS</div>
+ <h2 data-en="My Skills" data-ps="زما مهارتونه">My Skills</h2>
+ <p class="subtitle" data-en="Technologies and tools I work with." data-ps="هغه ټکنالوژۍ او وسایل چې ورسره کار کوم.">Technologies and tools I work with.</p>
+ <div class="skills">
+  <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>Python</span><span>Flutter</span><span>Dart</span><span>Laravel</span><span>Django</span><span>MySQL</span><span>SQLite</span><span>Git & GitHub</span><span>Streamlit</span>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="tag">03 / PROJECTS</div>
+ <h2 data-en="My Projects" data-ps="زما پروژې">My Projects</h2>
+ <p class="subtitle" data-en="Some of my development work and learning projects." data-ps="زما ځینې جوړې شوې او د زده‌کړې پروژې.">Some of my development work and learning projects.</p>
+ <div class="grid">
+  <div class="card"><h3>Hospital Management System</h3><p class="muted">A system for managing hospital information and operations.</p><p>Python · Django · SQLite</p></div>
+  <div class="card"><h3>Library Management System</h3><p class="muted">Offline bilingual library management application.</p><p>Django · SQLite</p></div>
+  <div class="card"><h3>School Management System</h3><p class="muted">A web system for school administration and records.</p><p>PHP · MySQL</p></div>
+  <div class="card"><h3>Student Performance Prediction</h3><p class="muted">A dashboard for student score prediction using machine learning.</p><p>Python · Streamlit</p></div>
+  <div class="card"><h3>Hospital Data Warehouse</h3><p class="muted">Data integration, ETL and analytics dashboard.</p><p>Python · MariaDB · Streamlit</p></div>
+  <div class="card"><h3>Afghan Job Finder</h3><p class="muted">A mobile job-finding application concept in development.</p><p>Flutter · Laravel · MySQL</p></div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="tag">04 / SERVICES</div>
+ <h2 data-en="What I Do" data-ps="زما خدمات">What I Do</h2>
+ <p class="subtitle" data-en="Digital solutions for businesses and organizations." data-ps="د سوداګرۍ او ادارو لپاره ډیجیټلي حل‌لارې.">Digital solutions for businesses and organizations.</p>
+ <div class="grid">
+  <div class="card"><h3 data-en="Website Development" data-ps="د ویب‌سایټ جوړول">Website Development</h3><p class="muted" data-en="Modern and responsive websites." data-ps="عصري او په ټولو وسایلو برابر ویب‌سایټونه.">Modern and responsive websites.</p></div>
+  <div class="card"><h3 data-en="Mobile App Development" data-ps="د موبایل اپلیکیشن جوړول">Mobile App Development</h3><p class="muted" data-en="Useful Android applications." data-ps="ګټور Android موبایل اپلیکیشنونه.">Useful Android applications.</p></div>
+  <div class="card"><h3 data-en="Database Systems" data-ps="د ډیټابېس سیسټمونه">Database Systems</h3><p class="muted" data-en="Organized and reliable database solutions." data-ps="منظم او باوري ډیټابېس حل‌لارې.">Organized and reliable database solutions.</p></div>
+ </div>
+</section>
+
+<section id="contact" class="contact">
+ <div class="tag">05 / CONTACT</div>
+ <h2 data-en="Let's Work Together" data-ps="راځئ یوځای کار وکړو">Let's Work Together</h2>
+ <p class="subtitle" data-en="Have a project or idea? Feel free to contact me." data-ps="کومه پروژه یا نظریه لرئ؟ په ډاډه زړه راسره اړیکه ونیسئ.">Have a project or idea? Feel free to contact me.</p>
+ <div class="card">
+  <p>GitHub: <a href="https://github.com/mahtabazhar" target="_blank">github.com/mahtabazhar</a></p>
+  <p>Email: <span data-en="Add your email address here" data-ps="دلته خپل ایمیل ولیکئ">Add your email address here</span></p>
+ </div>
+</section>
+
+<footer>© 2026 Mahtab Azhar. All Rights Reserved.</footer>
+
+<script>
+let currentLang="en";
+function toggleLang(){
+ currentLang=currentLang==="en"?"ps":"en";
+ document.documentElement.lang=currentLang;
+ document.body.classList.toggle("rtl",currentLang==="ps");
+ document.querySelectorAll("[data-en]").forEach(el=>{
+  el.innerHTML=el.dataset[currentLang];
+ });
+ document.getElementById("lang").textContent=currentLang==="en"?"پښتو":"English";
+}
+</script>
+</body>
+</html>
+
