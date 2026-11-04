@@ -4,140 +4,576 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mahtab Azhar - Software Engineer, Web and Mobile App Developer">
+<meta name="theme-color" content="#080d19">
 <title>Mahtab Azhar | Software Engineer</title>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#080d19;--card:#111a2c;--text:#f5f7ff;--muted:#aab5ca;--accent:#48d7c5}
-body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
-header{position:sticky;top:0;background:#080d19ed;backdrop-filter:blur(12px);padding:16px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #ffffff12;z-index:10}
-.logo{font-size:22px;font-weight:bold;color:var(--accent)}
-nav{display:flex;gap:20px;align-items:center}
-nav a{color:var(--text);text-decoration:none;font-size:14px}
-nav a:hover{color:var(--accent)}
-button,.btn{border:0;background:var(--accent);color:#06131b;padding:10px 17px;border-radius:9px;font-weight:bold;cursor:pointer;text-decoration:none}
-section{padding:75px 8%;scroll-margin-top:75px}
-.hero{min-height:85vh;display:flex;align-items:center;justify-content:space-between;gap:35px}
-.hero h1{font-size:clamp(35px,6vw,65px);line-height:1.2;margin:15px 0}
-.hero h1 span{color:var(--accent)}
-.hero p,.muted{color:var(--muted)}
-.hero p{max-width:580px;margin-bottom:25px}
-.profile{width:260px;height:260px;border-radius:50%;object-fit:cover;border:5px solid var(--accent);box-shadow:0 0 55px #48d7c533}
-.tag{color:var(--accent);font-weight:bold;letter-spacing:2px}
-h2{font-size:32px;margin-bottom:12px}
-.subtitle{color:var(--muted);margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.card{background:var(--card);padding:23px;border:1px solid #ffffff12;border-radius:15px;transition:.25s}
-.card:hover{transform:translateY(-5px);border-color:var(--accent)}
-.card h3{color:var(--accent);margin-bottom:9px}
-.skills{display:flex;flex-wrap:wrap;gap:12px}
-.skills span{background:var(--card);border:1px solid #ffffff20;padding:10px 17px;border-radius:9px}
-.contact a{color:var(--accent)}
-footer{text-align:center;padding:25px;border-top:1px solid #ffffff15;color:var(--muted)}
-#lang{margin-left:10px}
-@media(max-width:700px){
- header{flex-wrap:wrap;gap:12px}
- nav{width:100%;overflow-x:auto;padding-bottom:5px}
- .hero{flex-direction:column-reverse;text-align:center;justify-content:center}
- .profile{width:190px;height:190px}
- section{padding:55px 6%}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap');
+
+:root{
+ --bg:#080d19;
+ --bg2:#0d1525;
+ --card:#111c30;
+ --text:#f4f7ff;
+ --muted:#9eabc2;
+ --accent:#48d7c5;
+ --blue:#438cff;
+ --border:rgba(255,255,255,.09);
+ --shadow:0 20px 60px rgba(0,0,0,.3);
 }
-body.rtl{direction:rtl;text-align:right}
-body.rtl nav{direction:rtl}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+ background:var(--bg);
+ color:var(--text);
+ font-family:'Inter',Arial,sans-serif;
+ line-height:1.7;
+ overflow-x:hidden;
+}
+body.rtl{direction:rtl;text-align:right;font-family:'Noto Sans Arabic',Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+button{font:inherit;cursor:pointer}
+.container{width:min(1120px,90%);margin:auto}
+
+/* Background */
+.bg-glow{
+ position:fixed;
+ width:400px;height:400px;
+ border-radius:50%;
+ filter:blur(130px);
+ opacity:.12;
+ pointer-events:none;
+ z-index:-1;
+}
+.glow-one{background:#48d7c5;top:10%;left:-180px}
+.glow-two{background:#438cff;right:-180px;top:55%}
+
+/* Navigation */
+header{
+ position:sticky;top:0;z-index:100;
+ background:rgba(8,13,25,.88);
+ backdrop-filter:blur(18px);
+ border-bottom:1px solid var(--border);
+}
+.navbar{
+ min-height:76px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:20px;
+}
+.logo{font-size:23px;font-weight:800;letter-spacing:-1px}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:23px}
+.nav-links a{
+ font-size:13px;color:var(--muted);
+ transition:.3s;
+}
+.nav-links a:hover{color:var(--accent)}
+.lang-btn{
+ padding:9px 15px;
+ border:1px solid var(--accent);
+ color:var(--accent);
+ background:transparent;
+ border-radius:9px;
+ font-weight:700;
+}
+.menu-btn{
+ display:none;
+ background:transparent;
+ color:var(--text);
+ border:1px solid var(--border);
+ border-radius:8px;
+ padding:7px 11px;
+ font-size:20px;
+}
+
+/* Hero */
+.hero{
+ min-height:690px;
+ display:grid;
+ grid-template-columns:1.3fr .7fr;
+ align-items:center;
+ gap:50px;
+ padding-top:65px;
+ padding-bottom:70px;
+}
+.eyebrow{
+ display:inline-flex;
+ align-items:center;
+ gap:10px;
+ color:var(--accent);
+ font-size:12px;
+ font-weight:700;
+ letter-spacing:2px;
+ margin-bottom:22px;
+}
+.eyebrow:before{
+ content:"";
+ width:28px;height:2px;
+ background:var(--accent);
+}
+.hero h1{
+ font-size:clamp(40px,6vw,69px);
+ line-height:1.13;
+ letter-spacing:-2px;
+ margin-bottom:18px;
+}
+.hero h1 span{
+ background:linear-gradient(100deg,#48d7c5,#438cff);
+ -webkit-background-clip:text;
+ background-clip:text;
+ color:transparent;
+}
+.hero h3{
+ color:#dce6f8;
+ font-size:19px;
+ margin-bottom:18px;
+}
+.hero-text{
+ max-width:590px;
+ color:var(--muted);
+ font-size:15px;
+ margin-bottom:30px;
+}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+.btn{
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ padding:12px 22px;
+ border-radius:10px;
+ font-weight:700;
+ font-size:14px;
+ transition:.3s;
+}
+.btn-primary{
+ background:linear-gradient(120deg,#48d7c5,#438cff);
+ color:#06121b;
+ box-shadow:0 8px 28px #48d7c52a;
+}
+.btn-outline{
+ border:1px solid var(--border);
+ color:var(--text);
+}
+.btn:hover{transform:translateY(-4px)}
+
+/* Profile image */
+.profile-wrap{
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ position:relative;
+}
+.profile-ring{
+ width:330px;
+ height:330px;
+ border-radius:50%;
+ padding:7px;
+ background:linear-gradient(135deg,#48d7c5,#438cff,#a78bfa,#48d7c5);
+ box-shadow:0 0 35px #48d7c52a,0 0 85px #438cff20;
+ animation:ringGlow 5s ease-in-out infinite;
+}
+.profile{
+ width:100%;
+ height:100%;
+ display:block;
+ border-radius:50%;
+ object-fit:cover;
+ object-position:center 35%;
+ border:6px solid var(--bg);
+ background:var(--card);
+}
+@keyframes ringGlow{
+ 0%,100%{box-shadow:0 0 30px #48d7c52a,0 0 70px #438cff20}
+ 50%{box-shadow:0 0 45px #48d7c566,0 0 95px #438cff35}
+}
+.profile-label{
+ position:absolute;
+ bottom:12px;
+ left:0;
+ background:var(--card);
+ border:1px solid var(--border);
+ padding:10px 17px;
+ border-radius:12px;
+ box-shadow:var(--shadow);
+ font-size:12px;
+ font-weight:700;
+}
+body.rtl .profile-label{left:auto;right:0}
+
+/* Sections */
+section{padding:90px 0}
+.section-heading{text-align:center;margin-bottom:42px}
+.section-tag{
+ color:var(--accent);
+ font-size:12px;
+ font-weight:800;
+ letter-spacing:2px;
+ margin-bottom:8px;
+}
+.section-heading h2{
+ font-size:clamp(29px,4vw,40px);
+ margin-bottom:9px;
+}
+.section-heading p{color:var(--muted);font-size:14px}
+.about-box{
+ background:linear-gradient(145deg,#111c30,#0c1423);
+ border:1px solid var(--border);
+ border-radius:18px;
+ padding:35px;
+ box-shadow:var(--shadow);
+ color:var(--muted);
+ font-size:15px;
+}
+
+/* Skills */
+.grid{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:18px;
+}
+.skill-card,.project-card,.service-card{
+ background:linear-gradient(145deg,#121e33,#0d1627);
+ border:1px solid var(--border);
+ border-radius:16px;
+ padding:24px;
+ transition:.3s;
+}
+.skill-card:hover,.project-card:hover,.service-card:hover{
+ transform:translateY(-7px);
+ border-color:#48d7c580;
+ box-shadow:0 15px 35px #0005;
+}
+.skill-icon{
+ width:43px;height:43px;
+ display:grid;place-items:center;
+ background:#48d7c51b;
+ color:var(--accent);
+ border-radius:11px;
+ font-size:19px;
+ margin-bottom:15px;
+}
+.skill-card h3,.project-card h3,.service-card h3{
+ font-size:17px;margin-bottom:8px;
+}
+.skill-card p,.project-card p,.service-card p{
+ font-size:13px;color:var(--muted);
+}
+.skill-level{
+ height:5px;background:#ffffff12;
+ border-radius:20px;margin-top:16px;overflow:hidden;
+}
+.skill-level span{
+ display:block;height:100%;
+ background:linear-gradient(90deg,var(--accent),var(--blue));
+ border-radius:20px;
+}
+
+/* Projects */
+.project-card{
+ display:flex;
+ flex-direction:column;
+ min-height:225px;
+}
+.project-number{
+ color:var(--accent);
+ font-size:12px;
+ font-weight:800;
+ margin-bottom:13px;
+}
+.project-card p{flex:1}
+.tech{
+ display:flex;flex-wrap:wrap;gap:7px;margin-top:18px;
+}
+.tech span{
+ color:var(--accent);
+ background:#48d7c511;
+ border:1px solid #48d7c526;
+ border-radius:6px;
+ padding:4px 9px;
+ font-size:11px;
+}
+
+/* Services */
+.service-icon{
+ font-size:29px;
+ margin-bottom:15px;
+ color:var(--accent);
+}
+
+/* Contact */
+.contact-box{
+ background:linear-gradient(120deg,#112c38,#12213a);
+ border:1px solid #48d7c53b;
+ border-radius:20px;
+ padding:45px 25px;
+ text-align:center;
+}
+.contact-box h2{font-size:30px;margin-bottom:12px}
+.contact-box p{color:var(--muted);margin-bottom:23px}
+.contact-box .btn{margin:5px}
+
+/* Footer */
+footer{
+ border-top:1px solid var(--border);
+ padding:25px 0;
+ color:var(--muted);
+ text-align:center;
+ font-size:12px;
+}
+footer span{color:var(--accent)}
+
+/* Responsive */
+@media(max-width:850px){
+ .hero{grid-template-columns:1fr;text-align:center;gap:45px}
+ .hero-text{margin-left:auto;margin-right:auto}
+ .hero-actions{justify-content:center}
+ .profile-ring{width:275px;height:275px}
+ .profile-label{left:10%}
+ body.rtl .profile-label{left:auto;right:10%}
+ .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:650px){
+ .navbar{min-height:68px;flex-wrap:wrap;padding:12px 0}
+ .menu-btn{display:block}
+ .nav-links{
+  display:none;width:100%;
+  flex-direction:column;align-items:stretch;
+  gap:0;padding:10px 0 15px;
+ }
+ .nav-links.open{display:flex}
+ .nav-links a{padding:11px;border-bottom:1px solid var(--border)}
+ .lang-btn{align-self:flex-start;margin-top:10px}
+ .hero{min-height:auto;padding-top:65px}
+ .hero h1{font-size:43px}
+ .hero h3{font-size:16px}
+ .profile-ring{width:235px;height:235px}
+ .grid{grid-template-columns:1fr}
+ section{padding:65px 0}
+ .about-box{padding:24px}
+ .contact-box{padding:35px 20px}
+}
 </style>
 </head>
+
 <body>
+<div class="bg-glow glow-one"></div>
+<div class="bg-glow glow-two"></div>
+
 <header>
- <div class="logo">MahtabAzhar.</div>
- <nav>
-  <a href="#home" data-en="Home" data-ps="کور">Home</a>
-  <a href="#about" data-en="About" data-ps="زما په اړه">About</a>
-  <a href="#skills" data-en="Skills" data-ps="مهارتونه">Skills</a>
-  <a href="#projects" data-en="Projects" data-ps="پروژې">Projects</a>
-  <a href="#services" data-en="Services" data-ps="خدمات">Services</a>
-  <a href="#contact" data-en="Contact" data-ps="اړیکه">Contact</a>
-  <button id="lang" onclick="toggleLang()">پښتو</button>
- </nav>
+ <div class="container navbar">
+  <a class="logo" href="#home">Mahtab<span>Azhar.</span></a>
+
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+
+  <nav class="nav-links" id="navLinks">
+   <a href="#home" data-en="Home" data-ps="کور">Home</a>
+   <a href="#about" data-en="About" data-ps="زما په اړه">About</a>
+   <a href="#skills" data-en="Skills" data-ps="مهارتونه">Skills</a>
+   <a href="#projects" data-en="Projects" data-ps="پروژې">Projects</a>
+   <a href="#services" data-en="Services" data-ps="خدمات">Services</a>
+   <a href="#contact" data-en="Contact" data-ps="اړیکه">Contact</a>
+   <button class="lang-btn" id="langBtn" onclick="toggleLang()">پښتو</button>
+  </nav>
+ </div>
 </header>
 
-<section class="hero" id="home">
- <div>
-  <div class="tag" data-en="WELCOME TO MY PORTFOLIO" data-ps="زما شخصي ویب‌سایټ ته ښه راغلاست">WELCOME TO MY PORTFOLIO</div>
-  <h1 data-en="Hi, I'm <span>Mahtab Azhar</span>" data-ps="سلام، زه <span>مهتاب الله اظهار</span> یم">Hi, I'm <span>Mahtab Azhar</span></h1>
-  <h3 data-en="Software Engineer | Web & Mobile App Developer" data-ps="سافټویر انجینر | د ویب او موبایل اپلیکیشن جوړوونکی">Software Engineer | Web & Mobile App Developer</h3>
-  <p data-en="I build modern websites, mobile applications and database systems to help businesses grow through technology." data-ps="زه عصري ویب‌سایټونه، موبایل اپلیکیشنونه او ډیټابېس سیسټمونه جوړوم، ترڅو له سوداګریزو چارو سره د ټکنالوژۍ له لارې مرسته وکړم.">I build modern websites, mobile applications and database systems to help businesses grow through technology.</p>
-  <a class="btn" href="#contact" data-en="Contact Me" data-ps="اړیکه راسره ونیسئ">Contact Me</a>
-  <a class="btn" style="background:transparent;color:var(--accent);border:1px solid var(--accent);margin-left:8px" href="https://github.com/mahtabazhar" target="_blank">GitHub</a>
+<main>
+<section class="hero container" id="home">
+ <div class="hero-content">
+  <div class="eyebrow" data-en="WELCOME TO MY DIGITAL WORLD" data-ps="زما ډیجیټلي نړۍ ته ښه راغلاست">WELCOME TO MY DIGITAL WORLD</div>
+
+  <h1 data-en="Hi, I'm <span>Mahtab Azhar</span>" data-ps="سلام، زه <span>مهتاب الله اظهار</span> یم">
+   Hi, I'm <span>Mahtab Azhar</span>
+  </h1>
+
+  <h3 data-en="Software Engineer | Web & Mobile App Developer" data-ps="سافټویر انجینر | د ویب او موبایل اپلیکیشن جوړوونکی">
+   Software Engineer | Web & Mobile App Developer
+  </h3>
+
+  <p class="hero-text" data-en="I design and develop modern websites, mobile applications and database systems. I love turning ideas into useful digital solutions that help businesses and people grow." data-ps="زه عصري ویب‌سایټونه، موبایل اپلیکیشنونه او ډیټابېس سیسټمونه ډیزاین او جوړوم. زما موخه دا ده چې نظریې په ګټورو ډیجیټلي حل‌لارو بدلې کړم.">
+   I design and develop modern websites, mobile applications and database systems. I love turning ideas into useful digital solutions that help businesses and people grow.
+  </p>
+
+  <div class="hero-actions">
+   <a class="btn btn-primary" href="#contact" data-en="Let's Work Together ↗" data-ps="راځئ یوځای کار وکړو ↗">Let's Work Together ↗</a>
+   <a class="btn btn-outline" href="https://github.com/mahtabazhar" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
  </div>
- <img class="profile" src="profile.jpg" alt="Mahtab Azhar">
+
+ <div class="profile-wrap">
+  <div class="profile-ring">
+   <img class="profile" src="profile.jpg" alt="Mahtab Azhar - Software Engineer">
+  </div>
+  <div class="profile-label" data-en="✦ Software Engineer" data-ps="✦ سافټویر انجینر">✦ Software Engineer</div>
+ </div>
 </section>
 
 <section id="about">
- <div class="tag">01 / ABOUT</div>
- <h2 data-en="About Me" data-ps="زما په اړه">About Me</h2>
- <p class="subtitle" data-en="Passionate about technology and creative solutions." data-ps="د ټکنالوژۍ او نوښتګرو حل‌لارو سره مینه لرم.">Passionate about technology and creative solutions.</p>
- <div class="card">
-  <p data-en="I am Mahtab Azhar, a Software Engineer interested in web development, mobile application development and database management. My goal is to create useful, reliable and beautiful digital solutions." data-ps="زه مهتاب الله اظهار یم، یو سافټویر انجینر چې د ویب پراختیا، موبایل اپلیکیشنونو او ډیټابېس مدیریت سره مینه لرم. زما موخه د ګټورو، باوري او ښکلو ډیجیټلي حل‌لارو جوړول دي.">I am Mahtab Azhar, a Software Engineer interested in web development, mobile application development and database management. My goal is to create useful, reliable and beautiful digital solutions.</p>
+ <div class="container">
+  <div class="section-heading">
+   <div class="section-tag">01 / ABOUT ME</div>
+   <h2 data-en="About Me" data-ps="زما په اړه">About Me</h2>
+   <p data-en="A little introduction about myself" data-ps="زما په اړه لنډه پېژندنه">A little introduction about myself</p>
+  </div>
+  <div class="about-box">
+   <p data-en="I am Mahtab Azhar, a Software Engineer with an interest in software development, web technologies, mobile applications and database management. I enjoy learning new technologies and building practical systems that solve real-world problems. I believe in clean design, reliable code and continuous improvement." data-ps="زه مهتاب الله اظهار یم، یو سافټویر انجینر چې د سافټویر جوړولو، ویب ټکنالوژۍ، موبایل اپلیکیشنونو او ډیټابېس مدیریت سره علاقه لرم. زه د نوو ټکنالوژیو زده‌کړه او د واقعي ستونزو لپاره د عملي سیسټمونو جوړول خوښوم. زما باور په پاک ډیزاین، باوري کوډ او دوامداره پرمختګ دی.">
+    I am Mahtab Azhar, a Software Engineer with an interest in software development, web technologies, mobile applications and database management. I enjoy learning new technologies and building practical systems that solve real-world problems. I believe in clean design, reliable code and continuous improvement.
+   </p>
+  </div>
  </div>
 </section>
 
 <section id="skills">
- <div class="tag">02 / SKILLS</div>
- <h2 data-en="My Skills" data-ps="زما مهارتونه">My Skills</h2>
- <p class="subtitle" data-en="Technologies and tools I work with." data-ps="هغه ټکنالوژۍ او وسایل چې ورسره کار کوم.">Technologies and tools I work with.</p>
- <div class="skills">
-  <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PHP</span><span>Python</span><span>Flutter</span><span>Dart</span><span>Laravel</span><span>Django</span><span>MySQL</span><span>SQLite</span><span>Git & GitHub</span><span>Streamlit</span>
+ <div class="container">
+  <div class="section-heading">
+   <div class="section-tag">02 / MY EXPERTISE</div>
+   <h2 data-en="Technical Skills" data-ps="تخنیکي مهارتونه">Technical Skills</h2>
+   <p data-en="Technologies and tools I use in my development journey" data-ps="هغه ټکنالوژۍ او وسایل چې د پروګرام جوړولو په برخه کې یې کاروم">Technologies and tools I use in my development journey</p>
+  </div>
+
+  <div class="grid">
+   <div class="skill-card"><div class="skill-icon">🌐</div><h3>HTML & CSS</h3><p data-en="Modern web structure and styling" data-ps="د ویب‌سایټونو جوړښت او ډیزاین">Modern web structure and styling</p><div class="skill-level"><span style="width:85%"></span></div></div>
+   <div class="skill-card"><div class="skill-icon">⚡</div><h3>JavaScript</h3><p data-en="Interactive web experiences" data-ps="د ویب‌سایټونو تعاملي برخې">Interactive web experiences</p><div class="skill-level"><span style="width:65%"></span></div></div>
+   <div class="skill-card"><div class="skill-icon">🐍</div><h3>Python</h3><p data-en="Programming and application development" data-ps="پروګرام جوړونه او اپلیکیشنونه">Programming and application development</p><div class="skill-level"><span style="width:80%"></span></div></div>
+   <div class="skill-card"><div class="skill-icon">📱</div><h3>Flutter & Dart</h3><p data-en="Cross-platform mobile applications" data-ps="د موبایل اپلیکیشنونو جوړول">Cross-platform mobile applications</p><div class="skill-level"><span style="width:75%"></span></div></div>
+   <div class="skill-card"><div class="skill-icon">🗄️</div><h3>MySQL & SQLite</h3><p data-en="Database design and management" data-ps="د ډیټابېس ډیزاین او مدیریت">Database design and management</p><div class="skill-level"><span style="width:80%"></span></div></div>
+   <div class="skill-card"><div class="skill-icon">⚙️</div><h3>PHP & Laravel</h3><p data-en="Backend development and APIs" data-ps="د سیستمونو شاته برخه او APIs">Backend development and APIs</p><div class="skill-level"><span style="width:65%"></span></div></div>
+   <div class="skill-card"><div class="skill-icon">🎯</div><h3>Django</h3><p data-en="Python web application framework" data-ps="د Python ویب فریم‌ورک">Python web application framework</p><div class="skill-level"><span style="width:75%"></span></div></div>
+   <div class="skill-card"><div class="skill-icon">📊</div><h3>Streamlit</h3><p data-en="Data applications and dashboards" data-ps="د معلوماتو ډشبورډونه">Data applications and dashboards</p><div class="skill-level"><span style="width:70%"></span></div></div>
+   <div class="skill-card"><div class="skill-icon">🔗</div><h3>Git & GitHub</h3><p data-en="Version control and collaboration" data-ps="د کوډ مدیریت او شریکول">Version control and collaboration</p><div class="skill-level"><span style="width:75%"></span></div></div>
+  </div>
  </div>
 </section>
 
 <section id="projects">
- <div class="tag">03 / PROJECTS</div>
- <h2 data-en="My Projects" data-ps="زما پروژې">My Projects</h2>
- <p class="subtitle" data-en="Some of my development work and learning projects." data-ps="زما ځینې جوړې شوې او د زده‌کړې پروژې.">Some of my development work and learning projects.</p>
- <div class="grid">
-  <div class="card"><h3>Hospital Management System</h3><p class="muted">A system for managing hospital information and operations.</p><p>Python · Django · SQLite</p></div>
-  <div class="card"><h3>Library Management System</h3><p class="muted">Offline bilingual library management application.</p><p>Django · SQLite</p></div>
-  <div class="card"><h3>School Management System</h3><p class="muted">A web system for school administration and records.</p><p>PHP · MySQL</p></div>
-  <div class="card"><h3>Student Performance Prediction</h3><p class="muted">A dashboard for student score prediction using machine learning.</p><p>Python · Streamlit</p></div>
-  <div class="card"><h3>Hospital Data Warehouse</h3><p class="muted">Data integration, ETL and analytics dashboard.</p><p>Python · MariaDB · Streamlit</p></div>
-  <div class="card"><h3>Afghan Job Finder</h3><p class="muted">A mobile job-finding application concept in development.</p><p>Flutter · Laravel · MySQL</p></div>
+ <div class="container">
+  <div class="section-heading">
+   <div class="section-tag">03 / PORTFOLIO</div>
+   <h2 data-en="Featured Projects" data-ps="زما مهمې پروژې">Featured Projects</h2>
+   <p data-en="Some projects I have developed or am currently working on" data-ps="ځینې پروژې چې جوړې کړې مې دي یا پرې کار کوم">Some projects I have developed or am currently working on</p>
+  </div>
+
+  <div class="grid">
+   <div class="project-card">
+    <div class="project-number">PROJECT 01</div>
+    <h3>Hospital Management System</h3>
+    <p data-en="A hospital information management system for organizing patient, doctor and appointment records." data-ps="د ناروغانو، ډاکټرانو او ملاقاتونو د معلوماتو د تنظیم لپاره د روغتون سیسټم.">A hospital information management system for organizing patient, doctor and appointment records.</p>
+    <div class="tech"><span>Python</span><span>Django</span><span>SQLite</span></div>
+   </div>
+
+   <div class="project-card">
+    <div class="project-number">PROJECT 02</div>
+    <h3>Library Management System</h3>
+    <p data-en="An offline bilingual library management system for book records, borrowing and returns." data-ps="د کتابونو د ثبت، امانت او بېرته سپارلو لپاره دوه‌ژبی آفلاین کتابتون سیسټم.">An offline bilingual library management system for book records, borrowing and returns.</p>
+    <div class="tech"><span>Django</span><span>SQLite</span><span>Python</span></div>
+   </div>
+
+   <div class="project-card">
+    <div class="project-number">PROJECT 03</div>
+    <h3>School Management System</h3>
+    <p data-en="A school administration system for student records, attendance and financial management." data-ps="د زده‌کوونکو د معلوماتو، حاضري او مالي چارو لپاره د ښوونځي مدیریت سیسټم.">A school administration system for student records, attendance and financial management.</p>
+    <div class="tech"><span>PHP</span><span>MySQL</span><span>HTML</span></div>
+   </div>
+
+   <div class="project-card">
+    <div class="project-number">PROJECT 04</div>
+    <h3>Student Performance Prediction</h3>
+    <p data-en="A machine learning dashboard for exploring and predicting student academic performance." data-ps="د زده‌کوونکو د تحصیلي فعالیت د تحلیل او اټکل لپاره د ماشین لرنینګ ډشبورډ.">A machine learning dashboard for exploring and predicting student academic performance.</p>
+    <div class="tech"><span>Python</span><span>Streamlit</span><span>ML</span></div>
+   </div>
+
+   <div class="project-card">
+    <div class="project-number">PROJECT 05</div>
+    <h3>Hospital Data Warehouse</h3>
+    <p data-en="A data warehouse project with ETL processing and an analytics dashboard." data-ps="د معلوماتو د راټولولو، ETL پروسس او تحلیلي ډشبورډ پروژه.">A data warehouse project with ETL processing and an analytics dashboard.</p>
+    <div class="tech"><span>Python</span><span>MariaDB</span><span>Streamlit</span></div>
+   </div>
+
+   <div class="project-card">
+    <div class="project-number">PROJECT 06</div>
+    <h3>Afghan Job Finder</h3>
+    <p data-en="A mobile job-finding application concept currently in development." data-ps="د دندو موندلو لپاره د موبایل اپلیکیشن طرحه چې د جوړېدو په حال کې ده.">A mobile job-finding application concept currently in development.</p>
+    <div class="tech"><span>Flutter</span><span>Laravel</span><span>MySQL</span></div>
+   </div>
+  </div>
  </div>
 </section>
 
 <section id="services">
- <div class="tag">04 / SERVICES</div>
- <h2 data-en="What I Do" data-ps="زما خدمات">What I Do</h2>
- <p class="subtitle" data-en="Digital solutions for businesses and organizations." data-ps="د سوداګرۍ او ادارو لپاره ډیجیټلي حل‌لارې.">Digital solutions for businesses and organizations.</p>
- <div class="grid">
-  <div class="card"><h3 data-en="Website Development" data-ps="د ویب‌سایټ جوړول">Website Development</h3><p class="muted" data-en="Modern and responsive websites." data-ps="عصري او په ټولو وسایلو برابر ویب‌سایټونه.">Modern and responsive websites.</p></div>
-  <div class="card"><h3 data-en="Mobile App Development" data-ps="د موبایل اپلیکیشن جوړول">Mobile App Development</h3><p class="muted" data-en="Useful Android applications." data-ps="ګټور Android موبایل اپلیکیشنونه.">Useful Android applications.</p></div>
-  <div class="card"><h3 data-en="Database Systems" data-ps="د ډیټابېس سیسټمونه">Database Systems</h3><p class="muted" data-en="Organized and reliable database solutions." data-ps="منظم او باوري ډیټابېس حل‌لارې.">Organized and reliable database solutions.</p></div>
+ <div class="container">
+  <div class="section-heading">
+   <div class="section-tag">04 / WHAT I DO</div>
+   <h2 data-en="My Services" data-ps="زما خدمات">My Services</h2>
+   <p data-en="Digital solutions for businesses and organizations" data-ps="د سوداګریزو شرکتونو او ادارو لپاره ډیجیټلي حل‌لارې">Digital solutions for businesses and organizations</p>
+  </div>
+
+  <div class="grid">
+   <div class="service-card">
+    <div class="service-icon">🌐</div>
+    <h3 data-en="Website Development" data-ps="د ویب‌سایټ جوړول">Website Development</h3>
+    <p data-en="Modern, responsive and professional websites for businesses and organizations." data-ps="د شرکتونو او ادارو لپاره عصري، مسلکي او په ټولو وسایلو برابر ویب‌سایټونه.">Modern, responsive and professional websites for businesses and organizations.</p>
+   </div>
+   <div class="service-card">
+    <div class="service-icon">📲</div>
+    <h3 data-en="Mobile App Development" data-ps="د موبایل اپلیکیشن جوړول">Mobile App Development</h3>
+    <p data-en="Useful and user-friendly mobile applications for Android." data-ps="د Android لپاره ګټور او د کاروونکي لپاره اسانه موبایل اپلیکیشنونه.">Useful and user-friendly mobile applications for Android.</p>
+   </div>
+   <div class="service-card">
+    <div class="service-icon">🗃️</div>
+    <h3 data-en="Database Systems" data-ps="د ډیټابېس سیسټمونه">Database Systems</h3>
+    <p data-en="Organized database design, management systems and business solutions." data-ps="د ډیټابېس ډیزاین، مدیریت سیسټمونه او سوداګریزې حل‌لارې.">Organized database design, management systems and business solutions.</p>
+   </div>
+  </div>
  </div>
 </section>
 
-<section id="contact" class="contact">
- <div class="tag">05 / CONTACT</div>
- <h2 data-en="Let's Work Together" data-ps="راځئ یوځای کار وکړو">Let's Work Together</h2>
- <p class="subtitle" data-en="Have a project or idea? Feel free to contact me." data-ps="کومه پروژه یا نظریه لرئ؟ په ډاډه زړه راسره اړیکه ونیسئ.">Have a project or idea? Feel free to contact me.</p>
- <div class="card">
-  <p>GitHub: <a href="https://github.com/mahtabazhar" target="_blank">github.com/mahtabazhar</a></p>
-  <p>Email: <span data-en="Add your email address here" data-ps="دلته خپل ایمیل ولیکئ">Add your email address here</span></p>
+<section id="contact">
+ <div class="container">
+  <div class="contact-box">
+   <div class="section-tag">05 / GET IN TOUCH</div>
+   <h2 data-en="Let's Build Something Great" data-ps="راځئ یو ښکلی کار جوړ کړو">Let's Build Something Great</h2>
+   <p data-en="Have an idea or a project? Let's connect and make it happen." data-ps="کومه نظریه یا پروژه لرئ؟ راځئ اړیکه ونیسو او عملي یې کړو.">Have an idea or a project? Let's connect and make it happen.</p>
+   <a class="btn btn-primary" href="https://github.com/mahtabazhar" target="_blank" rel="noopener">Visit My GitHub ↗</a>
+  </div>
  </div>
 </section>
+</main>
 
-<footer>© 2026 Mahtab Azhar. All Rights Reserved.</footer>
+<footer>
+ <div class="container">
+  <p>© 2026 <span>Mahtab Azhar</span> — <span data-en="Designed with passion." data-ps="په مینه ډیزاین شوی.">Designed with passion.</span></p>
+ </div>
+</footer>
 
 <script>
 let currentLang="en";
+
 function toggleLang(){
  currentLang=currentLang==="en"?"ps":"en";
  document.documentElement.lang=currentLang;
  document.body.classList.toggle("rtl",currentLang==="ps");
+
  document.querySelectorAll("[data-en]").forEach(el=>{
-  el.innerHTML=el.dataset[currentLang];
+  el.innerHTML=el.getAttribute("data-"+currentLang);
  });
- document.getElementById("lang").textContent=currentLang==="en"?"پښتو":"English";
+
+ document.getElementById("langBtn").textContent=
+  currentLang==="en"?"پښتو":"English";
 }
+
+function toggleMenu(){
+ document.getElementById("navLinks").classList.toggle("open");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+ link.addEventListener("click",()=>{
+  document.getElementById("navLinks").classList.remove("open");
+ });
+});
 </script>
 </body>
 </html>
-
